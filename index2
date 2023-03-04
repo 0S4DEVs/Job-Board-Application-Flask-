@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Board</title>
+</head>
+<body>
+    <h1>Job Board</h1>
+    <hr>
+    {% for job in jobs %}
+        <h3>{{ job.title }}</h3>
+        <p>{{ job.description }}</p>
+        <p>Employer: {{ job.employer }}</p>
+        <p>Location: {{ job.location }}</p>
+        <p>Salary: {{ job.salary }}</p>
+        <hr>
+    {% endfor %}
+    <a href="{{ url_for('add_job') }}">Add a job</a>
+    <a href="{{ url_for('search_jobs') }}">Search for jobs</a>
+</body>
+</html>
